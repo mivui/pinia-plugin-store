@@ -15,7 +15,7 @@ function getPiniaState<T = any>(value?: string): T | undefined {
   if (value) return JSON.parse(value);
 }
 
-export function persistPlugin(options?: PiniaPersistOption): PiniaPlugin {
+export function storePlugin(options?: PiniaPersistOption): PiniaPlugin {
   return (context: PiniaPluginContext) => {
     if (options) {
       const { store } = context;

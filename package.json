@@ -1,6 +1,6 @@
 {
   "name": "pinia-plugin-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prop type definition of Vue3. only recommended for typescript.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

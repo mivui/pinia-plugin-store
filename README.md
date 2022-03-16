@@ -17,10 +17,10 @@ yarn add pinia-plugin-store
 ```ts
 
 import { createPinia } from 'pinia';
-import { persistPlugin } from 'pinia-plugin-store';
+import { storePlugin } from 'pinia-plugin-store';
 
 const store = createPinia();
-store.use(persistPlugin()); //all persistent by default
+store.use(storePlugin()); //all persistent by default
 
 export default store;
 ```
@@ -69,7 +69,7 @@ export const useMenuStore = defineStore({
 ```ts
 
 import { createPinia } from 'pinia';
-import { persistPlugin } from 'pinia-plugin-store';
+import { storePlugin } from 'pinia-plugin-store';
 import Utf8 from 'crypto-js/enc-utf8';
 import Base64 from 'crypto-js/enc-base64';
 
@@ -83,7 +83,7 @@ function decrypt(value: string): string {
   return Base64.parse(value).toString(Utf8);
 }
 
-const persist = persistPlugin({
+const persist = storePlugin({
   stores: ['menu_store'],
   storage: localStorage,
   encrypt,
