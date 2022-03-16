@@ -1,0 +1,66 @@
+{
+  "name": "pinia-plugin-store",
+  "version": "1.0.0",
+  "description": "Prop type definition of Vue3. only recommended for typescript.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --fix packages/**/*.ts dist/**/*.d.ts",
+    "rollup": "rollup -c rollup.config.js",
+    "api": "api-extractor run",
+    "build": "npm run rollup && npm run api && npm run lint "
+  },
+  "dependencies": {
+    "pinia": "^2.0.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.7",
+    "@babel/preset-env": "^7.16.11",
+    "@microsoft/api-extractor": "^7.19.5",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@types/crypto-js": "^4.1.1",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "crypto-js": "^4.1.1",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.0",
+    "rollup": "^2.70.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "ts-jest": "^27.1.3",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2"
+  },
+  "author": "uinio",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "pinia",
+    "persist",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uinio/pinia-plugin-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uinio/pinia-plugin-store/issues"
+  },
+  "homepage": "https://github.com/uinio/pinia-plugin-store#readme"
+}
