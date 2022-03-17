@@ -1,6 +1,6 @@
 {
   "name": "pinia-plugin-store",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "pinia plugin",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

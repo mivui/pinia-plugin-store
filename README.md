@@ -44,7 +44,7 @@ app.mount('#app');
 |:-----------:|:--------:|:------------------------------------------:|
 | stores | string[] |              pinia store keys              |
 | storage | storage | persistence strategy(default:localStorage) |
-| encrypt |(value: T) => string |                   persistent encryption                    |
+| encrypt |(value: string) => string |                   persistent encryption                    |
 | decrypt | (value: string) => string |                   persistent decryption                    |
 
 #### complete example
