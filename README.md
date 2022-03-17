@@ -49,6 +49,7 @@ app.mount('#app');
 
 #### complete example
 
+##### menu.ts
 ```ts
 import { defineStore } from 'pinia';
 
@@ -65,7 +66,7 @@ export const useMenuStore = defineStore({
 });
 
 ```
-
+##### store.ts
 ```ts
 
 import { createPinia } from 'pinia';
@@ -96,6 +97,7 @@ export default store;
 
 ```
 
+##### main.ts
 ```ts
 import { createApp } from 'vue';
 import store from './store';
