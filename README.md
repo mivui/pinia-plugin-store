@@ -20,7 +20,7 @@ import { createPinia } from 'pinia';
 import { storePlugin } from 'pinia-plugin-store';
 
 const store = createPinia();
-store.use(storePlugin()); //all persistent by default
+store.use(storePlugin());
 
 export default store;
 ```
@@ -40,16 +40,17 @@ app.mount('#app');
 
 #### api
 
-|  property   |   type   |                description                 |                                                         
-|:-----------:|:--------:|:------------------------------------------:|
-| stores | string[] |              pinia store keys              |
-| storage | storage | persistence strategy(default:localStorage) |
-| encrypt |(value: string) => string |                   persistent encryption                    |
-| decrypt | (value: string) => string |                   persistent decryption                    |
+| property |   type   |      description      |    default     |                                                       
+|:--------:|:--------:|:---------------------:|:--------------:|
+|  stores  | string[] |  pinia store keys(specify the store that needs to be persiste)   | All Store Keys |
+| storage  | storage | persistent strategy  |  localStorage  |
+| encrypt  |(value: string) => string | persistent encryption |   undefined    |
+| decrypt  | (value: string) => string | persistent decryption |   undefined    |
 
 #### complete example
 
 ##### menu.ts
+
 ```ts
 import { defineStore } from 'pinia';
 
@@ -66,7 +67,9 @@ export const useMenuStore = defineStore({
 });
 
 ```
+
 ##### store.ts
+
 ```ts
 
 import { createPinia } from 'pinia';
@@ -84,20 +87,21 @@ function decrypt(value: string): string {
   return Base64.parse(value).toString(Utf8);
 }
 
-const persist = storePlugin({
+const plugin = storePlugin({
   stores: ['menu_store'],
   storage: localStorage,
   encrypt,
   decrypt,
 });
 
-store.use(persist);
+store.use(plugin);
 
 export default store;
 
 ```
 
 ##### main.ts
+
 ```ts
 import { createApp } from 'vue';
 import store from './store';

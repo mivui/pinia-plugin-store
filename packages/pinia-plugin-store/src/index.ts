@@ -7,10 +7,6 @@ export interface PiniaPersistOption {
   decrypt?: (value: string) => string;
 }
 
-function defaultFun(value: string): string {
-  return value;
-}
-
 function getPiniaState<T = any>(value?: string): T | undefined {
   if (value) return JSON.parse(value);
 }
@@ -21,18 +17,18 @@ export function storePlugin(options?: PiniaPersistOption): PiniaPlugin {
       const { store } = context;
       const { storage, encrypt, decrypt, stores } = options;
       const _storage = storage || localStorage;
-      const _encrypt = encrypt || defaultFun;
-      const _decrypt = decrypt || defaultFun;
       if (stores ? stores.includes(store.$id) : true) {
         const session = _storage.getItem(store.$id);
         if (session) {
-          const state = getPiniaState(_decrypt(session));
+          const state = getPiniaState(decrypt ? decrypt(session) : session);
           if (state) store.$state = state;
         } else {
-          _storage.setItem(store.$id, _encrypt(JSON.stringify(store.$state)));
+          const json = JSON.stringify(store.$state);
+          _storage.setItem(store.$id, encrypt ? encrypt(json) : json);
         }
         store.$subscribe((mutation, state) => {
-          _storage.setItem(store.$id, _encrypt(JSON.stringify(state)));
+          const json = JSON.stringify(state);
+          _storage.setItem(store.$id, encrypt ? encrypt(json) : json);
         });
       }
     }
