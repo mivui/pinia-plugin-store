@@ -1,6 +1,6 @@
 # pinia-plugin-store
 
-### pinia persistent storage
+### pinia persistent plugin
 
 #### install
 

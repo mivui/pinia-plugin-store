@@ -13,24 +13,23 @@ function getPiniaState<T = any>(value?: string): T | undefined {
 
 export function storePlugin(options?: PiniaPersistOption): PiniaPlugin {
   return (context: PiniaPluginContext) => {
-    if (options) {
-      const { store } = context;
-      const { storage, encrypt, decrypt, stores } = options;
-      const _storage = storage || localStorage;
-      if (stores ? stores.includes(store.$id) : true) {
-        const session = _storage.getItem(store.$id);
-        if (session) {
-          const state = getPiniaState(decrypt ? decrypt(session) : session);
-          if (state) store.$state = state;
-        } else {
-          const json = JSON.stringify(store.$state);
-          _storage.setItem(store.$id, encrypt ? encrypt(json) : json);
-        }
-        store.$subscribe((mutation, state) => {
-          const json = JSON.stringify(state);
-          _storage.setItem(store.$id, encrypt ? encrypt(json) : json);
-        });
+    const _options = options || {};
+    const { store } = context;
+    const { storage, encrypt, decrypt, stores } = _options;
+    const _storage = storage || localStorage;
+    if (stores ? stores.includes(store.$id) : true) {
+      const session = _storage.getItem(store.$id);
+      if (session) {
+        const state = getPiniaState(decrypt ? decrypt(session) : session);
+        if (state) store.$state = state;
+      } else {
+        const json = JSON.stringify(store.$state);
+        _storage.setItem(store.$id, encrypt ? encrypt(json) : json);
       }
+      store.$subscribe((mutation, state) => {
+        const json = JSON.stringify(state);
+        _storage.setItem(store.$id, encrypt ? encrypt(json) : json);
+      });
     }
   };
 }
