@@ -14,7 +14,7 @@ function decrypt(value: string): string {
 }
 
 const persist = storePlugin({
-  stores: ['menu_store'],
+  stores: ['theme_store', { name: 'user_store', storage: sessionStorage }],
   storage: localStorage,
   encrypt,
   decrypt,

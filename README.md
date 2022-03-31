@@ -40,28 +40,28 @@ app.mount('#app');
 
 #### api
 
-| property |   type   |      description      |    default     |                                                       
-|:--------:|:--------:|:---------------------:|:--------------:|
-|  stores  | string[] |  pinia store keys(specify the store that needs to be persiste)   | All Store Keys |
-| storage  | storage | persistent strategy  |  localStorage  |
-| encrypt  |(value: string) => string | persistent encryption |   undefined    |
-| decrypt  | (value: string) => string | persistent decryption |   undefined    |
+| property |              type              |      description      |    default     |                                                       
+|:--------:|:------------------------------:|:---------------------:|:--------------:|
+|  stores  | (string &Iota; StoreOptions)[] |  pinia store keys(specify the store that needs to be persiste)   | All Store Keys |
+| storage  |            storage             |  persistent strategy  |  localStorage  |
+| encrypt  |   (value: string) => string    | persistent encryption |   undefined    |
+| decrypt  |   (value: string) => string    | persistent decryption |   undefined    |
 
 #### complete example
 
-##### menu.ts
+##### theme.ts
 
 ```ts
 import { defineStore } from 'pinia';
 
-export const useMenuStore = defineStore({
-  id: 'menu_store',
+export const useThemeStore = defineStore({
+  id: 'theme_store',
   state: () => ({
-    collapsed: false,
+    theme: 'dark',
   }),
   actions: {
-    setCollapsed(isCollapsed: boolean) {
-      this.collapsed = isCollapsed;
+    setTheme(theme: string) {
+      this.theme = theme;
     },
   },
 });
@@ -88,8 +88,10 @@ function decrypt(value: string): string {
 }
 
 const plugin = storePlugin({
-  stores: ['menu_store'],
-  storage: localStorage,
+  stores: ['theme_store'],
+  // use alone storage
+  // stores: [{name:'theme_store',storage: localStorage}]
+  storage: localStorage, //default storage
   encrypt,
   decrypt,
 });
