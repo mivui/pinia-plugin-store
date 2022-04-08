@@ -4,9 +4,6 @@
 
 [![npm version](https://badge.fury.io/js/pinia-plugin-store.svg)](https://badge.fury.io/js/pinia-plugin-store)
 ![Alt](https://img.shields.io/npm/dm/pinia-plugin-store)
-![Alt](https://img.shields.io/github/issues/uinio/pinia-plugin-store)
-![Alt](https://img.shields.io/github/forks/uinio/pinia-plugin-store)
-![Alt](https://img.shields.io/github/stars/uinio/pinia-plugin-store)
 ![Alt](https://img.shields.io/github/license/uinio/pinia-plugin-store)
 
 ### install
