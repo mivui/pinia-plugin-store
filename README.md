@@ -9,7 +9,7 @@
 ![Alt](https://img.shields.io/github/stars/uinio/pinia-plugin-store)
 ![Alt](https://img.shields.io/github/license/uinio/pinia-plugin-store)
 
-#### install
+### install
 
 ```shell
 npm install pinia-plugin-store
@@ -17,7 +17,7 @@ npm install pinia-plugin-store
 yarn add pinia-plugin-store
 ```
 
-## pinia-plugin-store example
+### example
 
 #### store.ts
 
@@ -54,7 +54,7 @@ app.mount('#app');
 | encrypt  |   (value: string) => string    | persistent encryption |   undefined    |
 | decrypt  |   (value: string) => string    | persistent decryption |   undefined    |
 
-#### complete example
+### complete example
 
 ##### theme.ts
 
