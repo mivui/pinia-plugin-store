@@ -1,6 +1,6 @@
 {
   "name": "pinia-plugin-store",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "pinia persistent plugin",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
-    "@microsoft/api-extractor": "^7.20.1",
+    "@microsoft/api-extractor": "^7.21.2",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^21.0.3",
     "@rollup/plugin-json": "^4.1.0",
@@ -32,7 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "crypto-js": "^4.1.1",
-    "eslint": "^8.12.0",
+    "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",

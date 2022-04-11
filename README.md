@@ -10,9 +10,16 @@
 
 ```shell
 npm install pinia-plugin-store
-
-yarn add pinia-plugin-store
 ```
+
+### API
+
+| property |              type              |                          description                          |    default     |                                                       
+|:--------:|:------------------------------:|:-------------------------------------------------------------:|:--------------:|
+|  stores  | (string &Iota; StoreOptions)[] | pinia store keys(specify the store that needs to be persiste) | All Store Keys |
+| storage  |            storage             |                      persistent strategy                      |  localStorage  |
+| encrypt  |   (value: string) => string    |                     persistent encryption                     |   undefined    |
+| decrypt  |   (value: string) => string    |                     persistent decryption                     |   undefined    |
 
 ### example
 
@@ -41,15 +48,6 @@ app.use(store);
 app.mount('#app');
 
 ```
-
-#### api
-
-| property |              type              |      description      |    default     |                                                       
-|:--------:|:------------------------------:|:---------------------:|:--------------:|
-|  stores  | (string &Iota; StoreOptions)[] |  pinia store keys(specify the store that needs to be persiste)   | All Store Keys |
-| storage  |            storage             |  persistent strategy  |  localStorage  |
-| encrypt  |   (value: string) => string    | persistent encryption |   undefined    |
-| decrypt  |   (value: string) => string    | persistent decryption |   undefined    |
 
 ### complete example
 

@@ -44,16 +44,16 @@ export function storePlugin(options?: PiniaPersistOptions): PiniaPlugin {
     const { store } = context;
     const { stores, encrypt, decrypt } = _options;
     if (stores && stores.length > 0) {
-      stores.forEach((_store) => {
-        if (typeof _store === 'string') {
-          if (_store === store.$id) {
+      stores.forEach((storeKey) => {
+        if (typeof storeKey === 'string') {
+          if (storeKey === store.$id) {
             const storage = _options.storage || localStorage;
             createStore(store, { stores, storage, encrypt, decrypt });
           }
-        } else if (_store && _store.name === store.$id) {
+        } else if (storeKey && storeKey.name === store.$id) {
           createStore(store, {
             stores,
-            storage: _store.storage,
+            storage: storeKey.storage,
             encrypt,
             decrypt,
           });
