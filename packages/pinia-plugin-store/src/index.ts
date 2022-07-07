@@ -1,4 +1,9 @@
-import { Store, PiniaPlugin, PiniaPluginContext } from 'pinia';
+import {
+  Store,
+  PiniaPlugin,
+  PiniaPluginContext,
+  SubscriptionCallback,
+} from 'pinia';
 
 export interface StoreOptions {
   name: string;
@@ -32,10 +37,11 @@ function createStore(store: Store, options: CreateStoreOptions) {
     const json = JSON.stringify(store.$state);
     storage.setItem(store.$id, encrypt ? encrypt(json) : json);
   }
-  store.$subscribe((mutation, state) => {
+  const subscription: SubscriptionCallback<any> = (mutation, state) => {
     const json = JSON.stringify(state);
     storage.setItem(store.$id, encrypt ? encrypt(json) : json);
-  });
+  };
+  store.$subscribe(subscription, { detached: true, deep: true });
 }
 
 export function storePlugin(options?: PiniaPersistOptions): PiniaPlugin {

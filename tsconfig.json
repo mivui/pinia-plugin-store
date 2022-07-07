@@ -10,6 +10,7 @@
     "allowJs": false,
     "strict": true,
     "noUnusedLocals": true,
+    "skipLibCheck": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
