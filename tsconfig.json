@@ -30,13 +30,13 @@
         "packages/*/src"
       ],
       "pinia-plugin-store": [
-        "packages/ts-prop/src"
+        "packages/pinia-plugin-store/src"
       ]
     },
     "declaration": true,
     "declarationMap": false
   },
   "include": [
-    "packages/*/src/**/*.ts"
+    "packages/*/src/**/*.ts",
   ]
 }
