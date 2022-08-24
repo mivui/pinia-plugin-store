@@ -21,7 +21,7 @@ npm install pinia-plugin-store
 | encrypt  |   (value: string) => string    |                     persistent encryption                     |   undefined    |
 | decrypt  |   (value: string) => string    |                     persistent decryption                     |   undefined    |
 
-### example
+### Example
 
 #### store.ts
 
@@ -49,7 +49,7 @@ app.mount('#app');
 
 ```
 
-### complete example
+### Complete Example
 
 ##### theme.ts
 
@@ -70,10 +70,11 @@ export const useThemeStore = defineStore({
 
 ```
 
-##### store.ts
+##### store.ts (Example 1)
+
+###### simple configuration
 
 ```ts
-
 import { createPinia } from 'pinia';
 import { storePlugin } from 'pinia-plugin-store';
 import Utf8 from 'crypto-js/enc-utf8';
@@ -91,9 +92,73 @@ function decrypt(value: string): string {
 
 const plugin = storePlugin({
   stores: ['theme_store'],
-  // use alone storage
-  // stores: [{name:'theme_store',storage: localStorage}]
-  storage: localStorage, //default storage
+  storage: localStorage,
+  encrypt,
+  decrypt,
+});
+
+store.use(plugin);
+
+export default store;
+
+```
+
+##### store.ts (Example 2)
+
+###### specify a storage alone
+
+```ts
+import { createPinia } from 'pinia';
+import { storePlugin } from 'pinia-plugin-store';
+import Utf8 from 'crypto-js/enc-utf8';
+import Base64 from 'crypto-js/enc-base64';
+
+const store = createPinia();
+
+function encrypt(value: string): string {
+  return Base64.stringify(Utf8.parse(value));
+}
+
+function decrypt(value: string): string {
+  return Base64.parse(value).toString(Utf8);
+}
+
+const plugin = storePlugin({
+  stores: [{ name: 'theme_store', storage: sessionStorage }],
+  storage: localStorage,
+  encrypt,
+  decrypt,
+});
+
+store.use(plugin);
+
+export default store;
+
+```
+
+##### store.ts (Example 3)
+
+###### whether encryption is required
+
+```ts
+import { createPinia } from 'pinia';
+import { storePlugin } from 'pinia-plugin-store';
+import Utf8 from 'crypto-js/enc-utf8';
+import Base64 from 'crypto-js/enc-base64';
+
+const store = createPinia();
+
+function encrypt(value: string): string {
+  return Base64.stringify(Utf8.parse(value));
+}
+
+function decrypt(value: string): string {
+  return Base64.parse(value).toString(Utf8);
+}
+
+const plugin = storePlugin({
+  stores: [{ name: 'theme_store', isSecretKey: false }],
+  storage: localStorage,
   encrypt,
   decrypt,
 });

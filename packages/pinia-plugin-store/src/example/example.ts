@@ -13,13 +13,13 @@ function decrypt(value: string): string {
   return Base64.parse(value).toString(Utf8);
 }
 
-const persist = storePlugin({
+const plugin = storePlugin({
   stores: ['theme_store', { name: 'user_store', storage: sessionStorage }],
   storage: localStorage,
   encrypt,
   decrypt,
 });
 
-store.use(persist);
+store.use(plugin);
 
 export default store;
