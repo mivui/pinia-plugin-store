@@ -138,7 +138,7 @@ export default store;
 
 ##### store.ts (Example 3)
 
-###### whether encryption is required
+###### disable encryption
 
 ```ts
 import { createPinia } from 'pinia';
@@ -157,7 +157,7 @@ function decrypt(value: string): string {
 }
 
 const plugin = storePlugin({
-  stores: [{ name: 'theme_store', isSecretKey: false }],
+  stores: [{ name: 'theme_store', ciphertext: false }],
   storage: localStorage,
   encrypt,
   decrypt,

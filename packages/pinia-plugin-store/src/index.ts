@@ -8,7 +8,7 @@ import {
 export interface StoreOptions {
   name: string;
   storage?: Storage;
-  isSecretKey?: boolean;
+  ciphertext?: boolean;
 }
 
 export type Stores = (string | StoreOptions)[];
@@ -58,12 +58,12 @@ export function storePlugin(options?: PiniaPersistOptions): PiniaPlugin {
             createStore(store, { stores, storage, encrypt, decrypt });
           }
         } else if (storeKey && storeKey.name === store.$id) {
-          const { storage, isSecretKey } = storeKey;
+          const { storage, ciphertext } = storeKey;
           createStore(store, {
             stores,
             storage: storage || _options.storage || localStorage,
-            encrypt: isSecretKey === false ? undefined : encrypt,
-            decrypt: isSecretKey === false ? undefined : decrypt,
+            encrypt: ciphertext === false ? undefined : encrypt,
+            decrypt: ciphertext === false ? undefined : decrypt,
           });
         }
       });
