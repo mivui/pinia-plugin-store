@@ -23,34 +23,6 @@ npm install pinia-plugin-store
 
 ### Example
 
-#### store.ts
-
-```ts
-
-import { createPinia } from 'pinia';
-import { storePlugin } from 'pinia-plugin-store';
-
-const store = createPinia();
-store.use(storePlugin());
-
-export default store;
-```
-
-#### main.ts
-
-```ts
-import { createApp } from 'vue';
-import store from './store';
-import App from './App.vue';
-
-const app = createApp(App);
-app.use(store);
-app.mount('#app');
-
-```
-
-### Complete Example
-
 ##### theme.ts
 
 ```ts
@@ -77,24 +49,11 @@ export const useThemeStore = defineStore({
 ```ts
 import { createPinia } from 'pinia';
 import { storePlugin } from 'pinia-plugin-store';
-import Utf8 from 'crypto-js/enc-utf8';
-import Base64 from 'crypto-js/enc-base64';
 
 const store = createPinia();
 
-function encrypt(value: string): string {
-  return Base64.stringify(Utf8.parse(value));
-}
-
-function decrypt(value: string): string {
-  return Base64.parse(value).toString(Utf8);
-}
-
 const plugin = storePlugin({
   stores: ['theme_store'],
-  storage: localStorage,
-  encrypt,
-  decrypt,
 });
 
 store.use(plugin);
@@ -106,6 +65,26 @@ export default store;
 ##### store.ts (Example 2)
 
 ###### specify a storage alone
+
+```ts
+import { createPinia } from 'pinia';
+import { storePlugin } from 'pinia-plugin-store';
+
+const store = createPinia();
+
+const plugin = storePlugin({
+  stores: [{ name: 'theme_store', storage: sessionStorage }, 'user_store'],
+  storage: localStorage,
+});
+store.use(plugin);
+
+export default store;
+
+```
+
+##### store.ts (Example 3)
+
+###### encryption
 
 ```ts
 import { createPinia } from 'pinia';
@@ -124,8 +103,7 @@ function decrypt(value: string): string {
 }
 
 const plugin = storePlugin({
-  stores: [{ name: 'theme_store', storage: sessionStorage }],
-  storage: localStorage,
+  stores: [{ name: 'theme_store' }],
   encrypt,
   decrypt,
 });
@@ -136,7 +114,7 @@ export default store;
 
 ```
 
-##### store.ts (Example 3)
+##### store.ts (Example 4)
 
 ###### disable encryption
 
