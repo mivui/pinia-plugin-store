@@ -20,8 +20,15 @@ export interface PiniaPersistOptions {
   decrypt?: (value: string) => string;
 }
 
+function isJSON(value: string) {
+  return /^\{+([^/]{0,})\}$/.test(value) || /^\[+([^/]{0,})\]$/.test(value);
+}
+
 function getState<T = any>(value?: string): T | undefined {
-  if (value) return JSON.parse(value);
+  if (value) {
+    if (isJSON(value)) return JSON.parse(value);
+    console.warn('unknown json format!');
+  }
 }
 
 interface CreateStoreOptions extends Omit<PiniaPersistOptions, 'storage'> {
