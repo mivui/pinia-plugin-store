@@ -1,9 +1,4 @@
-import {
-  Store,
-  PiniaPlugin,
-  PiniaPluginContext,
-  SubscriptionCallback,
-} from 'pinia';
+import { Store, PiniaPlugin, PiniaPluginContext, SubscriptionCallback } from 'pinia';
 
 export interface StoreOptions {
   name: string;

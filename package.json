@@ -10,10 +10,10 @@
   ],
   "scripts": {
     "test": "jest",
-    "lint": "eslint --fix",
+    "eslint": "eslint --fix **/*.{ts,js}",
     "rollup": "rollup -c rollup.config.js",
     "api": "api-extractor run",
-    "build": "pnpm run rollup && pnpm run api && pnpm run lint"
+    "build": "pnpm run rollup && pnpm run api && pnpm run eslint"
   },
   "dependencies": {
     "pinia": "^2.0.0"
