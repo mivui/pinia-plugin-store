@@ -9,7 +9,7 @@ import path from 'path';
 const extensions = ['.js', '.ts'];
 
 export default {
-  input: ['./packages/pinia-plugin-store/src/index.ts'],
+  input: ['./packages/index.ts'],
   output: [
     {
       file: 'dist/index.cjs.js',

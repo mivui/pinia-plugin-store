@@ -20,11 +20,10 @@
     "types": ["jest", "node"],
     "rootDir": ".",
     "paths": {
-      "@pinia-plugin-store/*": ["packages/*/src"],
-      "pinia-plugin-store": ["packages/pinia-plugin-store/src"]
+      "pinia-plugin-store": ["packages"]
     },
     "declaration": true,
     "declarationMap": false
   },
-  "include": ["packages/*/src/**/*.ts"]
+  "include": ["packages/**/*.ts"]
 }
