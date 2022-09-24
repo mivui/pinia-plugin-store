@@ -1,8 +1,7 @@
 # pinia-plugin-store
 
 ### pinia persistent plugin
-
-[![npm version](https://badge.fury.io/js/pinia-plugin-store.svg)](https://badge.fury.io/js/pinia-plugin-store)
+[![npm version](https://img.shields.io/npm/v/pinia-plugin-store.svg)](https://www.npmjs.com/package/pinia-plugin-store)
 ![Alt](https://img.shields.io/npm/dm/pinia-plugin-store)
 ![Alt](https://img.shields.io/github/license/uinio/pinia-plugin-store)
 
