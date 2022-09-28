@@ -15,7 +15,7 @@ npm install pinia-plugin-store
 
 | property |              type              |                          description                          |    default     |                                                       
 |:--------:|:------------------------------:|:-------------------------------------------------------------:|:--------------:|
-|  stores  | (string &Iota; StoreOptions)[] | pinia store keys(specify the store that needs to be persiste) | All Store Keys |
+|  stores  | (string &Iota; StoreOptions)[] | pinia store keys(specify the store that needs to be persiste) |   undefined    |
 | storage  |            storage             |                      persistent strategy                      |  localStorage  |
 | encrypt  |   (value: string) => string    |                     persistent encryption                     |   undefined    |
 | decrypt  |   (value: string) => string    |                     persistent decryption                     |   undefined    |
