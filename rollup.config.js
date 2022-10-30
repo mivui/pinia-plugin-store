@@ -2,11 +2,12 @@ import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
+import terser from '@rollup/plugin-terser';
 import path from 'path';
 
-const extensions = ['.js', '.ts'];
+const extensions = ['.mjs', '.cjs', '.js', '.ts', '.json', '.node'];
 
 export default {
   input: ['./packages/index.ts'],
@@ -22,26 +23,20 @@ export default {
     },
     {
       file: 'dist/index.esm.js',
-      format: 'esm',
+      format: 'es',
     },
   ],
   plugins: [
+    terser(),
     commonjs(),
     resolve({
       extensions,
-      modulesOnly: true,
-      preferredBuiltins: false,
+      preferBuiltins: false,
     }),
     json({
       namedExports: false,
     }),
-    typescript({
-      tsconfig: 'tsconfig.json',
-      tsconfigOverride: {
-        declaration: true,
-        declarationMap: false,
-      },
-    }),
+    typescript({ tsconfig: './tsconfig.json' }),
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('production'),
