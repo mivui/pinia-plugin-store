@@ -1,3 +1,4 @@
+import { defineConfig } from 'rollup';
 import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
@@ -9,25 +10,9 @@ import path from 'path';
 
 const extensions = ['.mjs', '.cjs', '.js', '.ts', '.json', '.node'];
 
-export default {
+export default defineConfig({
   input: ['./packages/index.ts'],
-  output: [
-    {
-      file: 'dist/index.cjs.js',
-      format: 'cjs',
-      plugins: [
-        getBabelOutputPlugin({
-          configFile: path.resolve(__dirname, 'babel.config.js'),
-        }),
-      ],
-    },
-    {
-      file: 'dist/index.esm.js',
-      format: 'es',
-    },
-  ],
   plugins: [
-    terser(),
     commonjs(),
     resolve({
       extensions,
@@ -44,4 +29,27 @@ export default {
       __buildVersion: 15,
     }),
   ],
-};
+  output: [
+    {
+      file: 'dist/index.cjs.js',
+      format: 'cjs',
+      plugins: [
+        getBabelOutputPlugin({
+          configFile: path.resolve(__dirname, 'babel.config.js'),
+        }),
+        terser(),
+      ],
+    },
+    {
+      file: 'dist/index.esm.js',
+      format: 'es',
+      plugins: [
+        getBabelOutputPlugin({
+          presets: ['@babel/preset-env'],
+          plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],
+        }),
+        terser(),
+      ],
+    },
+  ],
+});
