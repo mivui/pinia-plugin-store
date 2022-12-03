@@ -15,14 +15,13 @@ export interface PiniaPersistOptions {
   decrypt?: (value: string) => string;
 }
 
-function isJSON(value: string) {
-  return /^\{([^]*)}$/.test(value) || /^\[([^]*)]$/.test(value);
-}
-
 function getState<T = any>(value?: string): T | undefined {
   if (value) {
-    if (isJSON(value)) return JSON.parse(value);
-    console.warn('unknown json format!');
+    try {
+      return JSON.parse(value);
+    } catch (error) {
+      console.warn(error, 'unknown json format!');
+    }
   }
 }
 
