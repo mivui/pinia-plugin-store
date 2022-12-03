@@ -5,7 +5,7 @@ import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
-import terser from '@rollup/plugin-terser';
+// import terser from '@rollup/plugin-terser';
 import path from 'path';
 
 const extensions = ['.mjs', '.cjs', '.js', '.ts', '.json', '.node'];
@@ -37,7 +37,7 @@ export default defineConfig({
         getBabelOutputPlugin({
           configFile: path.resolve(__dirname, 'babel.config.js'),
         }),
-        terser(),
+        // terser(),
       ],
     },
     {
@@ -48,7 +48,7 @@ export default defineConfig({
           presets: ['@babel/preset-env'],
           plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],
         }),
-        terser(),
+        // terser(),
       ],
     },
   ],
