@@ -2,11 +2,9 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    'jest/globals': true,
   },
   extends: [
     'airbnb-base',
-    'plugin:jest/recommended',
     'plugin:import/recommended',
     'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
@@ -16,7 +14,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'prettier', 'import', 'jest'],
+  plugins: ['@typescript-eslint', 'prettier', 'import'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -35,7 +33,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
-    'import/no-cycle': [2, { maxDepth: 1 }],
+    'import/no-cycle': ['error', { maxDepth: 1 }],
     'import/no-named-as-default': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/no-named-as-default-member': 'off',

@@ -4,3 +4,4 @@ coverage
 .idea
 dist
 temp
+package-lock.json

@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
-  "mainEntryPointFilePath": "<projectFolder>dist/packages/index.d.ts",
+  "mainEntryPointFilePath": "<projectFolder>dist/index.d.ts",
   "apiReport": {
-    "enabled": true,
+    "enabled": false,
     "reportFolder": "<projectFolder>/temp/"
   },
   "docModel": {

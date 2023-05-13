@@ -17,13 +17,11 @@
     "removeComments": false,
     "jsx": "preserve",
     "lib": ["esnext", "dom"],
-    "types": ["jest", "node"],
-    "rootDir": ".",
+    "types": ["vitest/globals", "node"],
+    "rootDir": "./packages",
     "paths": {
       "pinia-plugin-store": ["packages"]
-    },
-    "declaration": true,
-    "declarationMap": false
+    }
   },
   "include": ["packages/**/*.ts"]
 }

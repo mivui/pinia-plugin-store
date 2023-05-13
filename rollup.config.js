@@ -21,7 +21,7 @@ export default defineConfig({
     json({
       namedExports: false,
     }),
-    typescript({ tsconfig: './tsconfig.json' }),
+    typescript({ tsconfig: './tsconfig.build.json' }),
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('production'),
