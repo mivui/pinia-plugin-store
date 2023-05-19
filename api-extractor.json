@@ -6,7 +6,7 @@
     "reportFolder": "<projectFolder>/temp/"
   },
   "docModel": {
-    "enabled": true
+    "enabled": false
   },
   "dtsRollup": {
     "enabled": true,
