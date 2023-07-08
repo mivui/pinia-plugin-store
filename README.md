@@ -3,7 +3,7 @@
 ### pinia persistent plugin
 [![npm version](https://img.shields.io/npm/v/pinia-plugin-store.svg)](https://www.npmjs.com/package/pinia-plugin-store)
 [![Alt](https://img.shields.io/npm/dm/pinia-plugin-store)](https://npmcharts.com/compare/pinia-plugin-store?minimal=true)
-![Alt](https://img.shields.io/github/license/uinio/pinia-plugin-store)
+![Alt](https://img.shields.io/github/license/mioxs/pinia-plugin-store)
 
 ### install
 
