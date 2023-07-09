@@ -1,6 +1,6 @@
 # pinia-plugin-tools
 
-### pinia persistent plugin
+### pinia tools plugin
 [![npm version](https://img.shields.io/npm/v/pinia-plugin-tools.svg)](https://www.npmjs.com/package/pinia-plugin-tools)
 [![Alt](https://img.shields.io/npm/dm/pinia-plugin-tools)](https://npmcharts.com/compare/pinia-plugin-tools?minimal=true)
 ![Alt](https://img.shields.io/github/license/mioxs/pinia-plugin-tools)
@@ -8,7 +8,7 @@
 ### install
 
 ```shell
-npm install pinia-plugin-tools
+npm i pinia-plugin-tools
 ```
 
 ### API
