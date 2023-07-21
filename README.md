@@ -1,14 +1,14 @@
-# pinia-plugin-tools
+# pinia-plugin-store
 
 ### pinia tools plugin
-[![npm version](https://img.shields.io/npm/v/pinia-plugin-tools.svg)](https://www.npmjs.com/package/pinia-plugin-tools)
-[![Alt](https://img.shields.io/npm/dm/pinia-plugin-tools)](https://npmcharts.com/compare/pinia-plugin-tools?minimal=true)
-![Alt](https://img.shields.io/github/license/mioxs/pinia-plugin-tools)
+[![npm version](https://img.shields.io/npm/v/pinia-plugin-store.svg)](https://www.npmjs.com/package/pinia-plugin-store)
+[![Alt](https://img.shields.io/npm/dm/pinia-plugin-store)](https://npmcharts.com/compare/pinia-plugin-store?minimal=true)
+![Alt](https://img.shields.io/github/license/mioxs/pinia-plugin-store)
 
 ### install
 
 ```shell
-npm i pinia-plugin-tools
+npm i pinia-plugin-store
 ```
 
 ### API
@@ -47,7 +47,7 @@ export const useThemeStore = defineStore({
 
 ```ts
 import { createPinia } from 'pinia';
-import { storePlugin } from 'pinia-plugin-tools';
+import { storePlugin } from 'pinia-plugin-store';
 
 const store = createPinia();
 
@@ -67,7 +67,7 @@ export default store;
 
 ```ts
 import { createPinia } from 'pinia';
-import { storePlugin } from 'pinia-plugin-tools';
+import { storePlugin } from 'pinia-plugin-store';
 
 const store = createPinia();
 
@@ -87,7 +87,7 @@ export default store;
 
 ```ts
 import { createPinia } from 'pinia';
-import { storePlugin } from 'pinia-plugin-tools';
+import { storePlugin } from 'pinia-plugin-store';
 import Utf8 from 'crypto-js/enc-utf8';
 import Base64 from 'crypto-js/enc-base64';
 
@@ -119,7 +119,7 @@ export default store;
 
 ```ts
 import { createPinia } from 'pinia';
-import { storePlugin } from 'pinia-plugin-tools';
+import { storePlugin } from 'pinia-plugin-store';
 import Utf8 from 'crypto-js/enc-utf8';
 import Base64 from 'crypto-js/enc-base64';
 
