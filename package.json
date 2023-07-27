@@ -16,8 +16,8 @@
     "build": "npm run rollup && npm run api && npm run eslint"
   },
   "dependencies": {
-    "vue": "^3.0.0",
-    "pinia": "^2.1.0"
+    "vue": "^3.3.4",
+    "pinia": "^2.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
@@ -32,24 +32,24 @@
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.2",
     "@types/crypto-js": "^4.1.1",
-    "@types/node": "^20.4.2",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
+    "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "@vue/test-utils": "^2.4.1",
     "crypto-js": "^4.1.1",
     "eslint": "^8.45.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier": "^8.9.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^5.0.0",
     "happy-dom": "^10.5.2",
     "prettier": "^3.0.0",
     "rollup": "^3.26.3",
-    "tslib": "^2.6.0",
+    "tslib": "^2.6.1",
     "typescript": "^5.1.6",
-    "vite": "^4.4.6",
+    "vite": "^4.4.7",
     "vitest": "^0.33.0"
   },
   "author": "mioxs",

@@ -1,4 +1,4 @@
-import { Store, PiniaPlugin, PiniaPluginContext, SubscriptionCallback } from 'pinia';
+import type { Store, PiniaPlugin, PiniaPluginContext, SubscriptionCallback } from 'pinia';
 
 export interface StoreOptions {
   name: string;
@@ -39,16 +39,16 @@ function createStore(store: Store, options: CreateStoreOptions) {
     const json = JSON.stringify(store.$state);
     storage.setItem(store.$id, encrypt ? encrypt(json) : json);
   }
-  const subscription: SubscriptionCallback<any> = (mutation, state) => {
+  const subscription: SubscriptionCallback<any> = (_mutation, state) => {
     const json = JSON.stringify(state);
     storage.setItem(store.$id, encrypt ? encrypt(json) : json);
   };
-  store.$subscribe(subscription, { detached: true, deep: true });
+  store.$subscribe(subscription, { detached: true, deep: true, immediate: true });
 }
 
 export function storePlugin(options?: PiniaPersistOptions): PiniaPlugin {
   return (context: PiniaPluginContext) => {
-    const _options = options || {};
+    const _options = Object.freeze(options) as PiniaPersistOptions;
     const { store } = context;
     const { stores, encrypt, decrypt } = _options;
     if (stores && stores.length > 0) {
@@ -58,11 +58,16 @@ export function storePlugin(options?: PiniaPersistOptions): PiniaPlugin {
             const storage = _options.storage || localStorage;
             createStore(store, { stores, storage, encrypt, decrypt });
           }
-        } else if (storeKey && storeKey.name === store.$id) {
+        } else if (storeKey.name === store.$id) {
           const { storage, ciphertext } = storeKey;
+          const _storage = () => {
+            if (_options.storage) return _options.storage;
+            if (storage) return storage;
+            return localStorage;
+          };
           createStore(store, {
             stores,
-            storage: storage || _options.storage || localStorage,
+            storage: _storage(),
             encrypt: ciphertext === false ? undefined : encrypt,
             decrypt: ciphertext === false ? undefined : decrypt,
           });
