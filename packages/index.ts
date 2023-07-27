@@ -61,8 +61,8 @@ export function storePlugin(options?: PiniaPersistOptions): PiniaPlugin {
         } else if (storeKey.name === store.$id) {
           const { storage, ciphertext } = storeKey;
           const _storage = () => {
-            if (_options.storage) return _options.storage;
             if (storage) return storage;
+            if (_options.storage) return _options.storage;
             return localStorage;
           };
           createStore(store, {
