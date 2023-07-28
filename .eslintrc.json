@@ -3,12 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "standard",
-    "plugin:import/recommended",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["standard", "plugin:prettier/recommended", "plugin:@typescript-eslint/recommended"],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "ecmaVersion": "latest",
@@ -17,7 +12,7 @@
       "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "no-console": "off",
     "no-debugger": "off",
