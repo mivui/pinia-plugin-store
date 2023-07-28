@@ -1,6 +1,6 @@
 {
   "name": "pinia-plugin-store",
-  "version": "2.1.32",
+  "version": "2.1.33",
   "description": "pinia tools plugin",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -16,8 +16,8 @@
     "build": "npm run rollup && npm run api && npm run eslint"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "pinia": "^2.1.6"
+    "pinia": "^2.1.6",
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
@@ -40,10 +40,12 @@
     "@vue/test-utils": "^2.4.1",
     "crypto-js": "^4.1.1",
     "eslint": "^8.45.0",
-    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.9.0",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
     "happy-dom": "^10.5.2",
     "prettier": "^3.0.0",
     "rollup": "^3.26.3",

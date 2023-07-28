@@ -48,7 +48,7 @@ function createStore(store: Store, options: CreateStoreOptions) {
 
 export function storePlugin(options?: PiniaPersistOptions): PiniaPlugin {
   return (context: PiniaPluginContext) => {
-    const _options = Object.freeze(options) as PiniaPersistOptions;
+    const _options = Object.assign({}, options);
     const { store } = context;
     const { stores, encrypt, decrypt } = _options;
     if (stores && stores.length > 0) {
