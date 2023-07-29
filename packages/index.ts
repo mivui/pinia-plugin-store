@@ -1,4 +1,4 @@
-import type { Store, PiniaPlugin, PiniaPluginContext, SubscriptionCallback } from 'pinia';
+import type { PiniaPlugin, PiniaPluginContext, Store, SubscriptionCallback } from 'pinia';
 
 export interface StoreOptions {
   name: string;
