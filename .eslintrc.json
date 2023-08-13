@@ -3,12 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "standard",
-    "plugin:import/recommended",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["standard", "plugin:prettier/recommended", "plugin:@typescript-eslint/recommended"],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "ecmaVersion": "latest",
@@ -17,7 +12,7 @@
       "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "no-console": "off",
     "no-debugger": "off",
@@ -34,21 +29,6 @@
         "allowForLoopAfterthoughts": true
       }
     ],
-    "import/named": "off",
-    "import/default": "off",
-    "import/namespace": "off",
-    "import/extensions": "off",
-    "import/no-unresolved": "off",
-    "import/prefer-default-export": "off",
-    "import/no-cycle": [
-      "error",
-      {
-        "maxDepth": 1
-      }
-    ],
-    "import/no-named-as-default": "off",
-    "import/no-extraneous-dependencies": "off",
-    "import/no-named-as-default-member": "off",
     "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-empty-function": "off",
