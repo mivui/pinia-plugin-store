@@ -1,9 +1,9 @@
 # pinia-plugin-store
 
 ### pinia tools plugin
-[![npm version](https://img.shields.io/npm/v/pinia-plugin-store.svg)](https://www.npmjs.com/package/pinia-plugin-store)
-[![Alt](https://img.shields.io/npm/dt/pinia-plugin-store)](https://npmcharts.com/compare/pinia-plugin-store?minimal=true)
-![Alt](https://img.shields.io/github/license/mioxs/pinia-plugin-store)
+[![npm version](https://img.shields.io/npm/v/pinia-plugin-store.svg?style=flat-square)](https://www.npmjs.com/package/pinia-plugin-store)
+[![Alt](https://img.shields.io/npm/dt/pinia-plugin-store?style=flat-square)](https://npmcharts.com/compare/pinia-plugin-store?minimal=true)
+![Alt](https://img.shields.io/github/license/mioxs/pinia-plugin-store?style=flat-square)
 
 ### install
 
