@@ -1,5 +1,4 @@
-import { mergeConfig } from 'vite';
-import { defineConfig } from 'vitest/config';
+import { defineConfig, mergeConfig } from 'vitest/config';
 import Vue from '@vitejs/plugin-vue';
 import VueJsx from '@vitejs/plugin-vue-jsx';
 
@@ -11,8 +10,8 @@ export default mergeConfig(
     test: {
       globals: true,
       environment: 'happy-dom',
-      transformMode: {
-        web: [/\.(vue|[tj]s|[tj]sx)$/],
+      testTransformMode: {
+        web: ['.vue', '.ts', '.tsx', '.js', '.jsx'],
       },
     },
   }),
