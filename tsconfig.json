@@ -9,6 +9,7 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     /* Linting */
     "strict": true,
@@ -16,7 +17,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     /* Path config */
-    "outDir": "dist",
+    "outDir": "temp",
     "sourceMap": false,
     "baseUrl": ".",
     "rootDir": "./packages",
