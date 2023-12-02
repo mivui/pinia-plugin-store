@@ -1,6 +1,6 @@
-import { defineConfig, mergeConfig } from 'vitest/config';
 import Vue from '@vitejs/plugin-vue';
 import VueJsx from '@vitejs/plugin-vue-jsx';
+import { defineConfig, mergeConfig } from 'vitest/config';
 
 export default mergeConfig(
   defineConfig({

@@ -1,13 +1,13 @@
-import { defineConfig } from 'rollup';
 import { getBabelOutputPlugin } from '@rollup/plugin-babel';
-import resolve from '@rollup/plugin-node-resolve';
-import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
+import json from '@rollup/plugin-json';
+import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-import { dts } from 'rollup-plugin-dts';
+import typescript from '@rollup/plugin-typescript';
 // import terser from '@rollup/plugin-terser';
 import path from 'path';
+import { defineConfig } from 'rollup';
+import { dts } from 'rollup-plugin-dts';
 
 const extensions = ['.mjs', '.cjs', '.js', '.ts', '.json', '.node'];
 

@@ -12,7 +12,7 @@
       "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort"],
   "rules": {
     "no-console": "off",
     "no-debugger": "off",
@@ -29,6 +29,8 @@
         "allowForLoopAfterthoughts": true
       }
     ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-empty-function": "off",
@@ -47,16 +49,6 @@
     "consistent-return": "off",
     "prettier/prettier": "error",
     "object-curly-newline": "off",
-    "prefer-promise-reject-errors": "off",
-    "sort-imports": [
-      "error",
-      {
-        "ignoreCase": false,
-        "ignoreDeclarationSort": true,
-        "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
-        "allowSeparatedGroups": true
-      }
-    ]
+    "prefer-promise-reject-errors": "off"
   }
 }
