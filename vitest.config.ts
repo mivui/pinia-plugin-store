@@ -10,9 +10,6 @@ export default mergeConfig(
     test: {
       globals: true,
       environment: 'happy-dom',
-      testTransformMode: {
-        web: ['.vue', '.ts', '.tsx', '.js', '.jsx'],
-      },
     },
   }),
 );

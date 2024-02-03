@@ -1,6 +1,6 @@
 {
   "name": "pinia-plugin-store",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "pinia tools plugin",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -8,6 +8,17 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./*": "./*"
+  },
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
   "scripts": {
     "test": "vitest",
     "eslint": "eslint --fix **/*.{ts,js}",
@@ -16,40 +27,40 @@
   },
   "dependencies": {
     "pinia": "^2.1.7",
-    "vue": "^3.3.9"
+    "vue": "^3.4.15"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.5",
-    "@babel/plugin-transform-runtime": "^7.23.4",
-    "@babel/preset-env": "^7.23.5",
+    "@babel/core": "^7.23.9",
+    "@babel/plugin-transform-runtime": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.5",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.5",
-    "@types/crypto-js": "^4.2.1",
-    "@types/node": "^20.10.2",
-    "@typescript-eslint/eslint-plugin": "^6.13.1",
-    "@typescript-eslint/parser": "^6.13.1",
-    "@vitejs/plugin-vue": "^4.5.1",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.11.16",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue/test-utils": "^2.4.3",
+    "@vue/test-utils": "^2.4.4",
     "crypto-js": "^4.2.0",
-    "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "happy-dom": "^12.10.3",
-    "prettier": "^3.1.0",
-    "rollup": "^4.6.1",
+    "happy-dom": "^13.3.8",
+    "prettier": "^3.2.4",
+    "rollup": "^4.9.6",
     "rollup-plugin-dts": "^6.1.0",
     "tslib": "^2.6.2",
-    "typescript": "^5.3.2",
-    "vite": "^5.0.4",
-    "vitest": "^0.34.6"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.2"
   },
   "author": "mioxs",
   "license": "MIT",
