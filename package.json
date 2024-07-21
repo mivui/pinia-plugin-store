@@ -1,6 +1,6 @@
 {
   "name": "pinia-plugin-store",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "pinia tools plugin",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -62,7 +62,7 @@
     "vite": "^5.3.4",
     "vitest": "^2.0.3"
   },
-  "author": "mioxs",
+  "author": "mivui",
   "license": "MIT",
   "keywords": [
     "vue",
@@ -72,10 +72,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mioxs/pinia-plugin-store.git"
+    "url": "git+https://github.com/mivui/pinia-plugin-store.git"
   },
   "bugs": {
-    "url": "https://github.com/mioxs/pinia-plugin-store/issues"
+    "url": "https://github.com/mivui/pinia-plugin-store/issues"
   },
-  "homepage": "https://github.com/mioxs/pinia-plugin-store#readme"
+  "homepage": "https://github.com/mivui/pinia-plugin-store#readme"
 }
