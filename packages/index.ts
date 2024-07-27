@@ -6,7 +6,7 @@ export interface StoreOptions {
   ciphertext?: boolean;
 }
 
-export type Stores = (string | StoreOptions)[];
+export type Stores = Array<StoreOptions | string>;
 
 export interface PiniaPersistOptions {
   stores?: Stores;
@@ -15,10 +15,10 @@ export interface PiniaPersistOptions {
   decrypt?: (value: string) => string;
 }
 
-function getState<T = any>(value?: string): T | undefined {
+function getState<T = unknown>(value?: string): T | undefined {
   if (value) {
     try {
-      return JSON.parse(value);
+      return JSON.parse(value) as T;
     } catch (error) {
       console.warn(error, 'unknown json format!');
     }
@@ -39,7 +39,7 @@ function createStore(store: Store, options: CreateStoreOptions) {
     const json = JSON.stringify(store.$state);
     storage.setItem(store.$id, encrypt ? encrypt(json) : json);
   }
-  const subscription: SubscriptionCallback<any> = (_mutation, state) => {
+  const subscription: SubscriptionCallback<unknown> = (_mutation, state) => {
     const json = JSON.stringify(state);
     storage.setItem(store.$id, encrypt ? encrypt(json) : json);
   };
@@ -48,26 +48,26 @@ function createStore(store: Store, options: CreateStoreOptions) {
 
 export function storePlugin(options?: PiniaPersistOptions): PiniaPlugin {
   return (context: PiniaPluginContext) => {
-    const _options = Object.assign({}, options);
+    const getOptions = { ...options };
     const { store } = context;
-    const { stores, encrypt, decrypt } = _options;
+    const { stores, encrypt, decrypt } = getOptions;
     if (stores && stores.length > 0) {
       stores.forEach((storeKey) => {
         if (typeof storeKey === 'string') {
           if (storeKey === store.$id) {
-            const storage = _options.storage || localStorage;
+            const storage = getOptions.storage ?? localStorage;
             createStore(store, { stores, storage, encrypt, decrypt });
           }
         } else if (storeKey.name === store.$id) {
           const { storage, ciphertext } = storeKey;
-          const _storage = () => {
+          const getStorage = () => {
             if (storage) return storage;
-            if (_options.storage) return _options.storage;
+            if (getOptions.storage) return getOptions.storage;
             return localStorage;
           };
           createStore(store, {
             stores,
-            storage: _storage(),
+            storage: getStorage(),
             encrypt: ciphertext === false ? undefined : encrypt,
             decrypt: ciphertext === false ? undefined : decrypt,
           });

@@ -1,7 +1,0 @@
-node_modules
-package.json
-**/*.md
-**/*.svg
-**/*.ejs
-**/*.html
-dist/**/*.js

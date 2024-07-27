@@ -1,11 +1,8 @@
-import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
-// import terser from '@rollup/plugin-terser';
-import path from 'path';
 import { defineConfig } from 'rollup';
 import { dts } from 'rollup-plugin-dts';
 
@@ -40,9 +37,6 @@ export default defineConfig([
         file: 'dist/index.cjs.js',
         format: 'cjs',
         plugins: [
-          getBabelOutputPlugin({
-            configFile: path.resolve(__dirname, 'babel.config.js'),
-          }),
           // terser(),
         ],
       },
@@ -50,10 +44,6 @@ export default defineConfig([
         file: 'dist/index.esm.js',
         format: 'es',
         plugins: [
-          getBabelOutputPlugin({
-            presets: ['@babel/preset-env'],
-            plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],
-          }),
           // terser(),
         ],
       },
