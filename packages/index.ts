@@ -15,10 +15,10 @@ export interface PiniaPersistOptions {
   decrypt?: (value: string) => string;
 }
 
-function getState<T = unknown>(value?: string): T | undefined {
+function getState(value?: string) {
   if (value) {
     try {
-      return JSON.parse(value) as T;
+      return JSON.parse(value) as unknown;
     } catch (error) {
       console.warn(error, 'unknown json format!');
     }

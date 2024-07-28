@@ -1,6 +1,6 @@
 {
   "name": "pinia-plugin-store",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "pinia plugin store",
   "type": "module",
   "main": "dist/index.cjs.js",
