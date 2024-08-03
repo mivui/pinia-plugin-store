@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
+    "declaration": false,
     "emitDeclarationOnly": true
   },
   "exclude": ["packages/__tests__/**/*.ts", "packages/example/**/*.ts"]
