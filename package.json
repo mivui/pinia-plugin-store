@@ -1,6 +1,6 @@
 {
   "name": "pinia-plugin-store",
-  "version": "2.2.8",
+  "version": "2.2.9",
   "description": "pinia plugin store",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -26,29 +26,29 @@
     "build": "rollup -c rollup.config.js"
   },
   "dependencies": {
-    "pinia": "^2.2.2",
-    "vue": "^3.5.8"
+    "pinia": "^2.2.5",
+    "vue": "^3.5.12"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-replace": "^6.0.1",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.0",
+    "@rollup/plugin-typescript": "^12.1.1",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^22.6.1",
+    "@types/node": "^22.8.6",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitejs/plugin-vue-jsx": "^4.0.1",
     "@vue/test-utils": "^2.4.6",
     "crypto-js": "^4.2.0",
-    "happy-dom": "^15.7.4",
-    "rollup": "^4.22.4",
+    "happy-dom": "^15.8.0",
+    "rollup": "^4.24.3",
     "rollup-plugin-dts": "^6.1.1",
-    "tslib": "^2.7.0",
-    "typescript": "^5.6.2",
-    "typescript-eslint-standard": "^9.10.0",
-    "vitest": "^2.1.1"
+    "tslib": "^2.8.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint-standard": "^9.17.0",
+    "vitest": "^2.1.4"
   },
   "author": "mivui",
   "license": "MIT",
