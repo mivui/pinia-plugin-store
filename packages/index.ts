@@ -18,7 +18,7 @@ export interface PiniaPersistOptions {
 function getState(value?: string) {
   if (value) {
     try {
-      return JSON.parse(value) as unknown;
+      return JSON.parse(value);
     } catch (error) {
       console.warn(error, 'unknown json format!');
     }
