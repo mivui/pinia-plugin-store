@@ -27,11 +27,12 @@ npm i pinia-plugin-store
 ```ts
 import { defineStore } from 'pinia';
 
-export const useThemeStore = defineStore({
-  id: 'theme_store',
-  state: () => ({
-    theme: 'dark',
-  }),
+export const useThemeStore = defineStore('theme_store', {
+  state: () => {
+    return {
+      theme: 'dark',
+    };
+  },
   actions: {
     setTheme(theme: string) {
       this.theme = theme;
@@ -63,7 +64,7 @@ export default store;
 
 > Example 2
 
-###### (store.ts) specify a storage alone
+###### specify a storage alone
 
 ```ts
 import { createPinia } from 'pinia';
