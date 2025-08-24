@@ -22,7 +22,7 @@ npm i pinia-plugin-store
 
 ### Example
 
-> theme.ts
+##### theme.ts
 
 ```ts
 import { defineStore } from 'pinia';
@@ -41,10 +41,9 @@ export const useThemeStore = defineStore('theme_store', {
 });
 
 ```
+##### store.ts
 
-> Example 1 
-
-###### simple configuration 
+> simple configuration
 
 ```ts
 import { createPinia } from 'pinia';
@@ -62,9 +61,7 @@ export default store;
 
 ```
 
-> Example 2
-
-###### specify a storage alone
+> specify a storage alone
 
 ```ts
 import { createPinia } from 'pinia';
@@ -82,9 +79,7 @@ export default store;
 
 ```
 
-> Example 3
-
-######  encryption
+> encryption
 
 ```ts
 import { createPinia } from 'pinia';
@@ -114,9 +109,7 @@ export default store;
 
 ```
 
-> Example 4
-
-###### disable encryption
+> disable encryption
 
 ```ts
 import { createPinia } from 'pinia';
