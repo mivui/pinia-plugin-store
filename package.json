@@ -1,10 +1,10 @@
 {
   "name": "pinia-plugin-store",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "pinia plugin store",
   "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -12,8 +12,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
+      "import": "./dist/index.js"
     },
     "./*": "./*"
   },

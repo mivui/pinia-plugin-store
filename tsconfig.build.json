@@ -4,5 +4,5 @@
     "declaration": false,
     "emitDeclarationOnly": true
   },
-  "exclude": ["packages/__tests__/**/*.ts", "packages/example/**/*.ts"]
+  "exclude": ["src/__tests__/**/*.ts", "src/example/**/*.ts"]
 }
